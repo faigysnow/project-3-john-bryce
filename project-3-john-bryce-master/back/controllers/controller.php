@@ -18,7 +18,7 @@
         $this->model =$model;
         $column="";
         $values="";
-        $exicute = array();
+        $execute = array();
 
             for($i=0; $i<count($rows); $i++) {
                 if (count($rows) != $i+1) {
@@ -26,17 +26,17 @@
                 $values .= ":" .$rows[$i] . ", ";
                 $get = 'get' . $rows[$i];
                 $putit = $this->model->{$get}();
-                $exicute[$rows[$i]] = $putit;
+                $execute[$rows[$i]] = $putit;
                 }
                 else {
                 $column .= $rows[$i];
                 $values .= ":" . $rows[$i];
                 $get = 'get' . $rows[$i];
                 $putit = $this->model->{$get}();
-                $exicute[$rows[$i]] = $putit;
+                $execute[$rows[$i]] = $putit;
                 }
             }
-        return [$column, $values, $exicute];
+        return [$column, $values, $execute];
         }
   
 

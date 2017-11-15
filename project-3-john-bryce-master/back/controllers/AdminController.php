@@ -10,8 +10,8 @@
         private $db;
         private $model;
         private $validation;        
-        private $table_name = "administratior";
-        private $classneame = "AdminController";
+        private $table_name = "administrator";
+        private $classname = "AdminController";
         
 
         function __construct($params) {
@@ -32,9 +32,9 @@
         }
 
 
-        // Updates a line in directos table
+        // Updates a line in directors table
         // function ReturnSelect() {
-        //     $List =  $this->db->SelectAllFromTable($this->table_name, $this->classneame);
+        //     $List =  $this->db->SelectAllFromTable($this->table_name, $this->classname);
         //     $CourseSelect="<option value='Select a Course'>Select a Course</option>";
         //         for ($i = 0; $i < count($List); $i++) {
         //         $CourseSelect .= "<option value=" . $List[$i]["id"] . ">" . $List[$i]["name"] . "</option>";
@@ -60,7 +60,7 @@
         }
 
 
-        function getRoleByPassword($passwoed) {
+        function getRoleByPassword($password) {
 //password to do
                 return  $OneStudent;
             
@@ -69,7 +69,7 @@
 
         // Selects all from Courses table and returns a object array
         function getAllAdmins(){
-            $getall = $this->db->SelectAllFromTable($this->table_name, $this->classneame);
+            $getall = $this->db->SelectAllFromTable($this->table_name, $this->classname);
             $allAdmins = array();            
             for($i=0; $i<count($getall); $i++) {
                 $c = new AdminModel($getall[$i]);
@@ -124,7 +124,7 @@
         }
 
 
-        // Updates a line in directos table
+        // Updates a line in directors table
         function UpdateById($param) {
                 if($this->model->getId() != false || $this->model->getId() != false){
                     //to do 

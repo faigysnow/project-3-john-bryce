@@ -32,7 +32,7 @@
         } 
 
 
-        // Update a Admins
+        // Update 1 Admins
         function Update($params) {
             $Admins =$this->controller->UpdateById($params);
             return $Admins;
